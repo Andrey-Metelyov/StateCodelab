@@ -158,3 +158,7 @@ fun PreviewTodoRow() {
     val todo = remember { generateRandomTodoItem() }
     TodoRow(todo = todo, onItemClicked = {}, modifier = Modifier.fillMaxWidth())
 }
+
+@Preview
+@Composable
+fun PreviewTodoItemInput() = TodoItemInput(onItemComplete = { })
