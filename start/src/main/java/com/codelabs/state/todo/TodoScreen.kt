@@ -52,8 +52,6 @@ fun TodoScreen(
         TodoItemInputBackground(elevate = true, modifier = Modifier.fillMaxWidth()) {
             TodoItemInput(onItemComplete = onAddItem)
         }
-    }
-    Column {
         LazyColumn(
             modifier = Modifier.weight(1f),
             contentPadding = PaddingValues(top = 8.dp)
