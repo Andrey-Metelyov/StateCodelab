@@ -205,7 +205,26 @@ fun TodoItemInlineEditor(
     icon = item.icon,
     onIconChange = { onEditItemChange(item.copy(icon = it)) },
     submit = onEditDone,
-    iconsVisible = true
+    iconsVisible = true,
+    buttonSlot = {
+        Row {
+            val shrinkButtons = Modifier.widthIn(20.dp)
+            TextButton(onClick = onEditDone, modifier = shrinkButtons) {
+                Text(
+                    text = "\uD83D\uDCBE",
+                    textAlign = TextAlign.End,
+                    modifier = Modifier.width(30.dp)
+                )
+            }
+            TextButton(onClick = onRemoveItem, modifier = shrinkButtons) {
+                Text(
+                    text = "❌",
+                    textAlign = TextAlign.End,
+                    modifier = Modifier.width(30.dp)
+                )
+            }
+        }
+    }
 )
 
 private fun randomTint(): Float {
